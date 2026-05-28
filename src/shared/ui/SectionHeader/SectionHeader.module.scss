@@ -1,0 +1,25 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.header {
+  margin-bottom: clamp(2rem, 5vw, 3.5rem);
+}
+
+.title {
+  @include section-title;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 3rem;
+    height: 3px;
+    margin-top: 0.75rem;
+    background: $gradient-primary;
+    border-radius: 2px;
+  }
+}
+
+.subtitle {
+  @include section-subtitle;
+  margin-top: 1rem;
+}

@@ -1,0 +1,162 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.projects {
+  padding-block: $section-padding-y;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(139, 92, 246, 0.02) 50%,
+    transparent 100%
+  );
+}
+
+.container {
+  @include container;
+}
+
+.placeholder {
+  @include card-base;
+  display: grid;
+  gap: 2rem;
+  max-width: 42rem;
+  margin-inline: auto;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  text-align: center;
+  overflow: hidden;
+
+  @include respond-to(md) {
+    max-width: 52rem;
+  }
+}
+
+.gifWrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 420px;
+  margin-inline: auto;
+  border-radius: $radius-md;
+  overflow: hidden;
+  border: 1px solid $border-color;
+  aspect-ratio: 16 / 9;
+  max-height: 280px;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.gif {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+}
+
+.gifBadge {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  padding: 0.25rem 0.625rem;
+  font-size: 0.6875rem;
+  font-family: $font-mono;
+  font-weight: 500;
+  color: $accent-emerald;
+  background: rgba(6, 10, 18, 0.85);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  border-radius: $radius-sm;
+  backdrop-filter: blur(8px);
+}
+
+.placeholderBody {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.status {
+  font-size: 0.75rem;
+  font-family: $font-mono;
+  color: $accent-cyan;
+  letter-spacing: 0.02em;
+}
+
+.placeholderTitle {
+  font-size: clamp(1.125rem, 3vw, 1.375rem);
+  font-weight: 600;
+  color: $text-primary;
+  line-height: 1.35;
+}
+
+.placeholderMessage {
+  font-size: 1rem;
+  color: $text-secondary;
+  line-height: 1.7;
+}
+
+.placeholderFootnote {
+  font-size: 0.875rem;
+  color: $text-muted;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+
+  @include respond-to(sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.card {
+  @include card-base;
+  display: flex;
+  flex-direction: column;
+  padding: 1.75rem;
+  height: 100%;
+
+  &:hover {
+    border-color: $border-accent;
+    box-shadow: $shadow-glow;
+  }
+}
+
+.title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: $text-primary;
+  margin-bottom: 0.75rem;
+}
+
+.description {
+  font-size: 0.9375rem;
+  color: $text-secondary;
+  line-height: 1.6;
+  flex: 1;
+  margin-bottom: 1.25rem;
+}
+
+.stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+  margin-bottom: 1.5rem;
+}
+
+.stackTag {
+  padding: 0.25rem 0.625rem;
+  font-size: 0.75rem;
+  font-family: $font-mono;
+  color: $accent-purple;
+  background: rgba(139, 92, 246, 0.1);
+  border-radius: $radius-sm;
+}
+
+.actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: auto;
+}

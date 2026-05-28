@@ -1,0 +1,138 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 1rem 0;
+  transition: background $transition-base, backdrop-filter $transition-base,
+    box-shadow $transition-base;
+
+  &.scrolled {
+    background: rgba(6, 10, 18, 0.85);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 1px 0 $border-color;
+  }
+}
+
+.container {
+  @include container;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-weight: 600;
+  font-size: 1.125rem;
+  @include focus-ring;
+}
+
+.logoImage {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  border: 2px solid rgba(59, 130, 246, 0.35);
+  box-shadow: 0 0 16px rgba(59, 130, 246, 0.2);
+  transition: border-color $transition-base, box-shadow $transition-base,
+    transform $transition-base;
+
+  .logo:hover & {
+    border-color: rgba(139, 92, 246, 0.5);
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+    transform: scale(1.04);
+  }
+}
+
+.logoText {
+  color: $text-primary;
+
+  @media (max-width: $bp-sm) {
+    display: none;
+  }
+}
+
+.nav {
+  @media (max-width: $bp-lg) {
+    display: none;
+  }
+}
+
+.navList {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.navLink {
+  padding: 0.5rem 0.875rem;
+  font-size: 0.875rem;
+  color: $text-secondary;
+  border-radius: $radius-sm;
+  transition: color $transition-base, background $transition-base;
+  @include focus-ring;
+
+  &:hover {
+    color: $text-primary;
+    background: rgba(255, 255, 255, 0.05);
+  }
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 0.5rem;
+  @include focus-ring;
+
+  span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: $text-primary;
+    border-radius: 1px;
+    transition: transform $transition-base;
+  }
+
+  @media (max-width: $bp-lg) {
+    display: flex;
+  }
+}
+
+.mobileMenu {
+  overflow: hidden;
+  background: rgba(6, 10, 18, 0.95);
+  backdrop-filter: blur(16px);
+  border-top: 1px solid $border-color;
+
+  @media (min-width: $bp-lg) {
+    display: none;
+  }
+}
+
+.mobileList {
+  @include container;
+  padding-block: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.mobileLink {
+  display: block;
+  padding: 0.75rem 0;
+  font-size: 1rem;
+  color: $text-secondary;
+  @include focus-ring;
+
+  &:hover {
+    color: $text-primary;
+  }
+}

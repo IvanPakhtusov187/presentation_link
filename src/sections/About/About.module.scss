@@ -1,0 +1,49 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.about {
+  padding-block: $section-padding-y;
+}
+
+.container {
+  @include container;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+
+  @include respond-to(md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include respond-to(lg) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  @include card-base;
+  display: flex;
+  gap: 1rem;
+  padding: 1.5rem;
+  height: 100%;
+
+  &:hover {
+    @include card-hover;
+  }
+}
+
+.icon {
+  flex-shrink: 0;
+  font-family: $font-mono;
+  font-size: 0.875rem;
+  font-weight: 600;
+  @include gradient-text;
+}
+
+.text {
+  font-size: 0.9375rem;
+  color: $text-secondary;
+  line-height: 1.6;
+}
