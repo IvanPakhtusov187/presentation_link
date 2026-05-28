@@ -10,6 +10,13 @@
 
 Деплой через GitHub Actions при push в `main`.
 
+### Первый запуск GitHub Pages (один раз)
+
+1. Открой [Settings → Pages](https://github.com/IvanPakhtusov187/presentation_link/settings/pages)
+2. **Build and deployment → Source:** выбери **Deploy from a branch**
+3. **Branch:** `gh-pages` → папка **`/ (root)`** → **Save**
+4. Дождись зелёного workflow в [Actions](https://github.com/IvanPakhtusov187/presentation_link/actions) (ветка `gh-pages` создаётся автоматически)
+
 ## Стек
 
 - **React 18** + **TypeScript**
