@@ -17,8 +17,8 @@ export const contactLinks: ContactLink[] = [
   {
     id: 'github',
     label: 'GitHub',
-    value: 'github.com/ivanpakhtusov',
-    href: 'https://github.com',
+    value: 'github.com/IvanPakhtusov187',
+    href: 'https://github.com/IvanPakhtusov187',
     external: true,
   },
   {
