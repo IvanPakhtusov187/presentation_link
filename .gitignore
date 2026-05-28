@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# Укажи свой домен: скопируй public/CNAME.example → public/CNAME
+public/CNAME
+
 # Editor
 .vscode/*
 !.vscode/extensions.json

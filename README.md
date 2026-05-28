@@ -4,18 +4,45 @@
 
 ## Live
 
-**https://ivanpakhtusov187.github.io/presentation_link/**
+Сайт публикуется на **свой домен** (без `github.io` в адресе), например: `https://ivanpakhtusov.dev`
 
 Репозиторий: [github.com/IvanPakhtusov187/presentation_link](https://github.com/IvanPakhtusov187/presentation_link)
 
-Деплой через GitHub Actions при push в `main`.
+### Кастомный домен (рекомендуется)
+
+1. **Купи домен** — [Cloudflare Registrar](https://www.cloudflare.com/products/registrar/), [Namecheap](https://www.namecheap.com/), [reg.ru](https://www.reg.ru/) (`.dev`, `.ru`, `.com` — на выбор).
+
+2. **Создай файл домена** в проекте:
+   ```bash
+   cp public/CNAME.example public/CNAME
+   ```
+   Открой `public/CNAME` и впиши **только домен**, одной строкой, без `https://`:
+   ```
+   ivanpakhtusov.dev
+   ```
+
+3. **GitHub Pages** → [Settings → Pages](https://github.com/IvanPakhtusov187/presentation_link/settings/pages):
+   - Source: **Deploy from a branch** → `gh-pages` → `/ (root)`
+   - **Custom domain:** тот же домен из `CNAME` → **Save** → включи **Enforce HTTPS**
+
+4. **DNS у регистратора** (замени `ivanpakhtusov.dev` на свой домен):
+
+   | Тип | Имя | Значение |
+   |-----|-----|----------|
+   | `CNAME` | `www` | `ivanpakhtusov187.github.io` |
+   | `A` | `@` | `185.199.108.153` |
+   | `A` | `@` | `185.199.109.153` |
+   | `A` | `@` | `185.199.110.153` |
+   | `A` | `@` | `185.199.111.153` |
+
+   Для корня без `www` используй только `A`-записи; для `www` — `CNAME` на `ivanpakhtusov187.github.io`.
+
+5. **Закоммить и запушить** — после деплоя сайт откроется по твоему домену (DNS может обновляться до 24–48 ч, обычно быстрее).
 
 ### Первый запуск GitHub Pages (один раз)
 
-1. Открой [Settings → Pages](https://github.com/IvanPakhtusov187/presentation_link/settings/pages)
-2. **Build and deployment → Source:** выбери **Deploy from a branch**
-3. **Branch:** `gh-pages` → папка **`/ (root)`** → **Save**
-4. Дождись зелёного workflow в [Actions](https://github.com/IvanPakhtusov187/presentation_link/actions) (ветка `gh-pages` создаётся автоматически)
+1. [Settings → Pages](https://github.com/IvanPakhtusov187/presentation_link/settings/pages) → **Deploy from a branch** → `gh-pages` / `(root)`
+2. Дождись зелёного workflow в [Actions](https://github.com/IvanPakhtusov187/presentation_link/actions)
 
 ## Стек
 
