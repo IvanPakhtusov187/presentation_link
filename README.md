@@ -2,6 +2,14 @@
 
 Современный сайт-визитка Frontend Developer с тёмной fintech-темой, анимациями Framer Motion и feature-based архитектурой.
 
+## Live
+
+**https://ivanpakhtusov187.github.io/presentation_link/**
+
+Репозиторий: [github.com/IvanPakhtusov187/presentation_link](https://github.com/IvanPakhtusov187/presentation_link)
+
+Деплой через GitHub Actions при push в `main`.
+
 ## Стек
 
 - **React 18** + **TypeScript**
