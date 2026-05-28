@@ -6,5 +6,5 @@ export const heroData: HeroData = {
   subtitle: 'React • TypeScript • RTK Query • Microfrontends',
   description:
     'Frontend-разработчик с 4+ годами коммерческого опыта. Разрабатываю enterprise SPA, сложные бизнес-интерфейсы, highload-реестры, формы, UI-kit и микрофронтенды.',
-  resumeUrl: '/resume.pdf',
+  resumeUrl: `${import.meta.env.BASE_URL}resume.pdf`,
 };

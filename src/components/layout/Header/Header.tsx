@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { navLinks } from '@/data';
+import { assetUrl } from '@/shared/lib/assetUrl';
 import { scrollToSection } from '@/shared/lib/scrollTo';
 import styles from './Header.module.scss';
 
@@ -34,7 +35,7 @@ export function Header() {
           aria-label="На главную — Иван Пахтусов"
         >
           <img
-            src="/logo.png"
+            src={assetUrl('logo.png')}
             alt=""
             className={styles.logoImage}
             width={40}
